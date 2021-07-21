@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body {font: 12px 'Microsoft YaHei'; color: #333333;}
+        .btn {
+            display: inline-block;
+            padding: 3px 6px;
+            border: 1px solid #FFFFFF;
+            box-shadow: 1px 1px 1px #CCCCCC;
+            border-radius: 3px;
+            background-color: #FFFFFF;
+        }
+        .btn:hover {
+            background-color: hotpink;
+            border-color: hotpink;
+            cursor: pointer;
+        }
+        .btn-normal {
+            background-color: #CCFFCC;
+            border-color: #CCFFCC;
+        }
+        .divider {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: #000000d9;
+            font-size: 14px;
+            font-variant: tabular-nums;
+            line-height: 1.5715;
+            list-style: none;
+            font-feature-settings: "tnum";
+            border-top: 1px solid rgba(0,0,0,.06);
+        }
+        .divider-vertical {
+            position: relative;
+            top: -.06em;
+            display: inline-block;
+            height: .9em;
+            margin: 0 8px;
+            vertical-align: middle;
+            border-top: 0;
+            border-left: 1px solid rgba(0,0,0,.06);
+        }
+        .input {
+            padding: 2px 4px;
+            margin-right: 2px;
+            border: 1px solid #CCCCCC;
+            border-radius: 3px;
+        }
+        .input input {
+            border: none;
+            outline: none;
+            height: 19px;
+            color: #777777;
+            background-color: transparent;
+            width: 100%;
+        }
+        .input-inline {
+            flex: 1;
+        }
+
+        .form-item {
+            margin-bottom: 10px;
+        }
+        .modal {
+            position: absolute;
+            display: none;
+            background-color: #FFFFFF;
+            padding: 10px;
+            top: 10px;
+            /* top: 50%;
+            margin-top: -100px; */
+            left: 10px;
+            right: 10px;
+            box-shadow: 5px 5px 5px #CCCCCC;
+            border: 1px solid #CCCCCC;
+            border-radius: 3px;
+        }
+        .table {
+            display:table;
+        }
+        .table-row {
+            display: table-row;
+        }
+        .table-header {
+            background-color: gainsboro;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 700;
+        }
+        .table-row-cell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-row-cell > img {
+            width: 60px;
+        }
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: white;
+        }
+        #main {
+            padding: 10px;
+            background-color: rgb(250, 250, 250);
+        }
+        #url {
+            float: left;
+            width: 100%;
+            display: flex;
+            display: -webkit-flex;
+        }
+        #tool {
+            float: left;
+            width: 100%;
+            padding: 8px 0;
+        }
+        #table {
+            float: left;
+            width: 100%;
+        }
+        #message {
+            /* background-color: rgba(0, 0, 0, .6); */
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            color: #FFFFFF;
+            text-align: center;
+            z-index: 999;
+        }
+        #message > span {
+            background-color: rgba(0, 0, 0, .6);
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        #preview {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">loading...</div>
+    <div id="main">
+        <div id="message" class="modal"><span>test</span></div>
+        <div id="preview" class="modal"></div>
+        <div id="url">
+            <div class="input input-inline">
+                <input id="path" type="text" name="url" readonly />
+            </div>
+            <div class="btn" id="copy" data-clipboard-target="#path">复制</div>
+        </div>
+        <div id="tool">
+            <div class="btn" onclick="clearData()">清除</div>
+            <div class="btn" onclick="save(true)">预览</div>
+            <div class="btn btn-normal" onclick="save()">保存</div>
+            <div class="divider divider-vertical"></div>
+            <div class="btn btn-normal" onclick="modalShow()">新增</div>
+        </div>
+        <div id="table" class="table">
+            <div class="table-row table-header">
+                <div class="table-row-cell">英雄</div>
+                <div class="table-row-cell">名次</div>
+                <div class="table-row-cell">备注</div>
+            </div>
+        </div>
+        <div id="add" class="modal">
+            <form id="form">
+                <div class="form-item">
+                    <div class="form-item-label">英雄</div>
+                    <div class="form-item-body">
+                        <select id="heros" name="hero"></select>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-item-label">名次</div>
+                    <div class="form-item-body input">
+                        <input type="text" name="rank" />
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-item-label">备注</div>
+                    <div class="form-item-body input">
+                        <input type="text" name="remark" />
+                    </div>
+                </div>
+                <div class="form-item">
+                    <input type="submit" class="btn btn-normal" value="添加" />
+                    <div class="btn" onclick="modalHide()">取消</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <script>
+        var colors = [
+            '',
+            '255, 0, 0',
+            '255, 165, 0',
+            '255, 255, 0',
+            '0, 255, 0',
+            '0, 127, 255',
+            '0, 0, 255',
+            '139, 0, 255',
+        ];
+        var ranks = [
+            '',
+            '1st',
+            '2nd',
+            '3rd',
+            '4th',
+            '5th',
+            '6th',
+            '7th',
+            '8th',
+        ];
+        var loading = true;
+        var heros = [];
+        window.onload = function() {
+            var $preview = document.getElementById('preview');
+            var $form = document.getElementById('form');
+            var $path = document.getElementById('path');
+            var $loading = document.getElementById('loading');
+            var $heros = document.getElementById('heros');
+            var $table = document.getElementById('table');
+            var url = 'heros.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', url);
+            request.send(null);
+            request.onload = function () {
+                loading = false;
+                $loading.style.display = 'none';
+                if (request.status == 200) {
+                    heros = JSON.parse(request.responseText);
+                    $heros.innerHTML = heros.map(function(hero) {
+                        return '<option value="'+hero.pic+'">'+hero.name+'</option>';
+                    });
+                }
+            }
+
+            $path.value = 'https://www.coolhub.cn/battlegrounds/p/'+getFilename()+'.png';
+            var clipboard = new ClipboardJS('#copy');
+
+            clipboard.on('success', function (e) {
+                showMessage('已复制');
+                console.info('Action:', e.action);
+                console.info('Text:', e.text);
+                console.info('Trigger:', e.trigger);
+
+                e.clearSelection();
+            });
+
+            clipboard.on('error', function (e) {
+                showMessage('复制失败, 请手动复制');
+                console.error('Action:', e.action);
+                console.error('Trigger:', e.trigger);
+            });
+
+            document.body.addEventListener("mouseup", function(e) {
+                $preview.style.display = 'none';
+                $preview.innerHTML = '';
+            });
+            $form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                var values = new FormData($form);
+                var row = {};
+                for (const [name,value] of values) {
+                    row[name] = value;
+                }
+
+                var data = localStorage.getItem('data');
+                if (data == null) {
+                    data = [];
+                } else {
+                    data = JSON.parse(data);
+                }
+
+                data.push(row);
+                localStorage.setItem('data', JSON.stringify(data));
+                var tableRow = document.createElement("div");
+                tableRow.className = 'table-row';
+                tableRow.innerHTML = '<div class="table-row-cell"><img src="heros/'+row.hero+'"/></div><div class="table-row-cell">'+row.remark+'</div><div class="table-row-cell">'+row.rank+'</div>'
+                $table.append(tableRow);
+                showMessage('添加成功');
+                modalHide();
+            });
+
+            var data = localStorage.getItem('data');
+            if (data == null) {
+                // 未添加
+                return;
+            }
+
+            data = JSON.parse(data);
+            for (var i=0; i<data.length; i++) {
+                var tableRow = document.createElement("div");
+                tableRow.className = 'table-row';
+                tableRow.innerHTML = '<div class="table-row-cell"><img src="heros/'+data[i].hero+'"/></div><div class="table-row-cell">'+data[i].remark+'</div><div class="table-row-cell">'+data[i].rank+'</div>'
+                $table.append(tableRow);
+            }
+        }
+
+        function modalShow() {
+            var $modal = document.getElementById('add');
+            $modal.style.display = 'block';
+        }
+
+        function modalHide() {
+            var $modal = document.getElementById('add');
+            $modal.style.display = 'none';
+        }
+
+        function showMessage(message) {
+            var $message = document.getElementById('message');
+            $message.innerHTML = '<span>'+message+'</span>';
+            $message.style.display = 'block';
+            setTimeout(function() {
+                $message.style.display = 'none';
+            }, 3000);
+        }
+
+        function getFilename() {
+            var filename = localStorage.getItem('filename');
+            if (filename == null) {
+                filename = new Date()*1000/1000;
+                localStorage.setItem('filename', filename);
+            }
+
+            return filename;
+        }
+
+        function clearData() {
+            localStorage.removeItem('data');
+            var $table = document.getElementById('table');
+            $table.innerHTML = '<div class="table-row table-header">\
+                <div class="table-row-cell">英雄</div>\
+                <div class="table-row-cell">名次</div>\
+                <div class="table-row-cell">备注</div>\
+            </div>';
+            showMessage('已清空');
+            save(false, true);
+        }
+
+        function save(preview, quiet) {
+            if (loading) {
+                return;
+            }
+            var data = localStorage.getItem('data');
+            if (data == null) {
+                // 未添加
+                // showMessage('无数据');
+                //return;
+                data = '[]';
+            }
+            data = JSON.parse(data);
+
+            preview = preview || false;
+            quiet = quiet || false;
+            var $table = document.getElementById('table');
+            var canvas = document.createElement("canvas");
+            canvas.width = 500;
+            canvas.height = 500;
+            ctx = canvas.getContext("2d");
+            //创建渐变对象
+            var gr = ctx.createLinearGradient(0, 0, 260, 0);
+            gr.addColorStop(1, 'rgb(255,255,255, 0)');
+            for (var i=0; i<data.length; i++) {
+                ctx.font = "bold 30px Arial";
+                //创建渐变对象
+                var gr2 = ctx.createLinearGradient(0, i*70, 0, i*70+35);
+                //颜色断点
+                gr2.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.3)');
+                gr2.addColorStop(1, 'rgb(255,255,255, 0)');
+                ctx.fillStyle = gr2;
+                ctx.fillText(ranks[data[i].rank], 200, i*70+25);
+                //颜色断点
+                gr.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.3)');
+                ctx.fillStyle = gr;
+                ctx.fillRect(0, i*70+20, 260, 45);
+                ctx.font = "bold 36px 微软雅黑";
+                ctx.textAlign = "left";
+                ctx.fillStyle = "white";
+                ctx.fillText(data[i].remark, 70, i*70+55);
+                ctx.drawImage($table.children[i+1].children[0].children[0], 0, i*70+10, 60, 60);
+                ctx.save();
+            }
+            var base64Data = canvas.toDataURL("image/png", 1.0);
+            // console.log(base64Data)
+            // 封装blob对象
+            if (preview) {
+                var $preview = document.getElementById('preview');
+                var tmpImg = document.createElement('img')
+                tmpImg.src = base64Data;
+                $preview.appendChild(tmpImg);
+                $preview.style.display = 'block';
+                return;
+            }
+
+            //组装formdata
+            var fd = new FormData();
+            fd.append("fileData", base64Data);
+            fd.append("fileName", getFilename());
+            var request = new XMLHttpRequest();
+            request.open("POST", 'save.php');
+            // xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);
+            request.send(fd);
+            request.onload = function () {
+                if (request.status == 200 && quiet == false) {
+                    // success
+                    showMessage('保存成功');
+                }
+            }
+        }
+
+        function dataURItoBlob(dataurl) {
+            var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+            while(n--){
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            return new Blob([u8arr], {type:mime});
+        }
+    </script>
+</body>
+</html>
