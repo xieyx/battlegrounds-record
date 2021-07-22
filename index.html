@@ -6,6 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css">
     <style>
         * {margin: 0; padding: 0;}
         body {font: 12px 'Microsoft YaHei'; color: #333333;}
@@ -369,30 +370,35 @@
             quiet = quiet || false;
             var $table = document.getElementById('table');
             var canvas = document.createElement("canvas");
-            canvas.width = 500;
-            canvas.height = 500;
+            canvas.width = 300;
+            canvas.height = 1000;
             ctx = canvas.getContext("2d");
             //创建渐变对象
-            var gr = ctx.createLinearGradient(0, 0, 260, 0);
+            var gr = ctx.createLinearGradient(0, 0, 230, 0);
             gr.addColorStop(1, 'rgb(255,255,255, 0)');
             for (var i=0; i<data.length; i++) {
-                ctx.font = "bold 30px Arial";
+                ctx.font = "bold 24px 'Fira Code', monospace";
                 //创建渐变对象
-                var gr2 = ctx.createLinearGradient(0, i*70, 0, i*70+35);
+                var gr2 = ctx.createLinearGradient(0, i*70, 0, i*70+24);
                 //颜色断点
-                gr2.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.3)');
+                gr2.addColorStop(0, 'rgb(255, 255, 255, 0.3)');
                 gr2.addColorStop(1, 'rgb(255,255,255, 0)');
                 ctx.fillStyle = gr2;
-                ctx.fillText(ranks[data[i].rank], 200, i*70+25);
+                ctx.fillText(ranks[data[i].rank], 170, i*70+26);
+                var gr3 = ctx.createLinearGradient(0, i*70, 0, i*70+24);
+                gr3.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.5)');
+                gr3.addColorStop(1, 'rgb(255,255,255, 0)');
+                ctx.fillStyle = gr3;
+                ctx.fillText(ranks[data[i].rank], 170, i*70+26);
                 //颜色断点
                 gr.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.3)');
                 ctx.fillStyle = gr;
-                ctx.fillRect(0, i*70+20, 260, 45);
-                ctx.font = "bold 36px 微软雅黑";
+                ctx.fillRect(0, i*70+20, 230, 45);
+                ctx.font = "bold 24px 微软雅黑";
                 ctx.textAlign = "left";
                 ctx.fillStyle = "white";
-                ctx.fillText(data[i].remark, 70, i*70+55);
-                ctx.drawImage($table.children[i+1].children[0].children[0], 0, i*70+10, 60, 60);
+                ctx.fillText(data[i].remark, 75, i*70+50);
+                ctx.drawImage($table.children[i+1].children[0].children[0], 0, i*70+10, 70, 70);
                 ctx.save();
             }
             var base64Data = canvas.toDataURL("image/png", 1.0);
