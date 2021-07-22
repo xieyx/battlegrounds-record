@@ -214,6 +214,7 @@
             '0, 127, 255',
             '0, 0, 255',
             '139, 0, 255',
+            '200, 200, 200',
         ];
         var ranks = [
             '',
@@ -371,7 +372,7 @@
             var $table = document.getElementById('table');
             var canvas = document.createElement("canvas");
             canvas.width = 300;
-            canvas.height = 1000;
+            canvas.height = 600;
             ctx = canvas.getContext("2d");
             //创建渐变对象
             var gr = ctx.createLinearGradient(0, 0, 230, 0);
@@ -398,7 +399,7 @@
                 ctx.textAlign = "left";
                 ctx.fillStyle = "white";
                 ctx.fillText(data[i].remark, 75, i*70+50);
-                ctx.drawImage($table.children[i+1].children[0].children[0], 0, i*70+10, 70, 70);
+                ctx.drawImage($table.children[i+1].children[0].children[0], 0, i*70, 70, 70);
                 ctx.save();
             }
             var base64Data = canvas.toDataURL("image/png", 1.0);
