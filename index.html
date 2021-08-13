@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css">
     <style>
         * {margin: 0; padding: 0;}
-        body {font: 12px 'Microsoft YaHei'; color: #333333;}
+        body {font: 12px 'Microsoft YaHei'; color: #333333; background-color: rgb(250, 250, 250);}
         .btn {
             display: inline-block;
             padding: 3px 6px;
@@ -105,7 +105,7 @@
         .table-row-cell > img {
             width: 60px;
         }
-        #loading {
+        .full-screen {
             position: fixed;
             top: 0;
             left: 0;
@@ -115,7 +115,6 @@
         }
         #main {
             padding: 10px;
-            background-color: rgb(250, 250, 250);
         }
         #url {
             float: left;
@@ -148,11 +147,51 @@
         }
         #preview {
             background-color: black;
+            padding: 0;
+            top: 0;
+            left: 0;
+            border: none;
+            overflow: hidden;
+            height: 100%;
+        }
+        #config {
+            display: none;
+        }
+        #config > .modal {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div id="loading">loading...</div>
+    <div class="full-screen" id="loading">loading...</div>
+    <div class="full-screen" id="config">
+        <div class="modal">
+            <form id="config-form">
+                <div class="form-item">
+                    <div class="form-item-label">地址</div>
+                    <div class="form-item-body input">
+                        <input type="text" name="host" />
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-item-label">端口</div>
+                    <div class="form-item-body input">
+                        <input type="text" name="port" />
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-item-label">密码</div>
+                    <div class="form-item-body input">
+                        <input type="text" name="password" />
+                    </div>
+                </div>
+                <div class="form-item">
+                    <input type="submit" class="btn btn-normal" value="确定" />
+                    <div class="btn" onclick="configHide()">取消</div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div id="main">
         <div id="message" class="modal"><span>test</span></div>
         <div id="preview" class="modal"></div>
@@ -187,7 +226,7 @@
                 <div class="form-item">
                     <div class="form-item-label">名次</div>
                     <div class="form-item-body input">
-                        <input type="text" name="rank" />
+                        <input type="number" min="1" max="8" name="rank" />
                     </div>
                 </div>
                 <div class="form-item">
@@ -203,7 +242,9 @@
             </form>
         </div>
     </div>
-    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <!--<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>-->
+    <script type="text/javascript" src="clipboard.min.js"></script>
+    <script type="text/javascript" src="obs-websocket.js"></script>
     <script>
         var colors = [
             '',
@@ -229,11 +270,14 @@
         ];
         var loading = true;
         var heros = [];
+        var config = {};
         window.onload = function() {
             var $preview = document.getElementById('preview');
             var $form = document.getElementById('form');
+            var $configForm = document.getElementById('config-form');
             var $path = document.getElementById('path');
             var $loading = document.getElementById('loading');
+            var $config = document.getElementById('config');
             var $heros = document.getElementById('heros');
             var $table = document.getElementById('table');
             var url = 'heros.json';
@@ -272,6 +316,15 @@
             document.body.addEventListener("mouseup", function(e) {
                 $preview.style.display = 'none';
                 $preview.innerHTML = '';
+            });
+            $configForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                var values = new FormData($configForm);
+                for (const [name,value] of values) {
+                    config[name] = value;
+                }
+                initWs();
+                configHide();
             });
             $form.addEventListener("submit", function(e) {
                 e.preventDefault();
@@ -313,13 +366,35 @@
             }
         }
 
+        function initWs() {
+            const obs = new OBSWebSocket();
+            obs.connect({ address: config.host+':'+config.port, password: config.password }).catch(err => { // Promise convention dicates you have a catch on every chain.
+                console.log(err);
+            });
+            obs.on('error', err => {
+                console.error('socket error:', err);
+            });
+        }
+
         function modalShow() {
             var $modal = document.getElementById('add');
+            var $form = document.getElementById('form');
+            $form.reset();
             $modal.style.display = 'block';
         }
 
         function modalHide() {
             var $modal = document.getElementById('add');
+            $modal.style.display = 'none';
+        }
+
+        function configShow() {
+            var $modal = document.getElementById('config');
+            $modal.style.display = 'block';
+        }
+
+        function configHide() {
+            var $modal = document.getElementById('config');
             $modal.style.display = 'none';
         }
 
@@ -372,7 +447,7 @@
             var $table = document.getElementById('table');
             var canvas = document.createElement("canvas");
             canvas.width = 300;
-            canvas.height = 600;
+            canvas.height = 700;
             ctx = canvas.getContext("2d");
             //创建渐变对象
             var gr = ctx.createLinearGradient(0, 0, 230, 0);
