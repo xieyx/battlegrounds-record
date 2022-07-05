@@ -1,1 +1,334 @@
-[{"name":"艾德温·范克里夫","pic":"TB_BaconShop_HERO_01.png"},{"name":"阿莱克丝塔萨","pic":"TB_BaconShop_HERO_56.png"},{"name":"阿兰娜·逐星","pic":"TB_BaconShop_HERO_59.png"},{"name":"奥拉基尔","pic":"TB_BaconShop_HERO_76.png"},{"name":"巴罗夫领主","pic":"TB_BaconShop_HERO_72.png"},{"name":"比格沃斯先生","pic":"TB_BaconShop_HERO_70.png"},{"name":"堕落的乔治","pic":"TB_BaconShop_HERO_15.png"},{"name":"恩佐斯","pic":"TB_BaconShop_HERO_93.png"},{"name":"疯狂金字塔","pic":"TB_BaconShop_HERO_39.png"},{"name":"芬利·莫格顿爵士","pic":"TB_BaconShop_HERO_40.png"},{"name":"格雷布","pic":"TB_BaconShop_HERO_95.png"},{"name":"钩牙船长","pic":"TB_BaconShop_HERO_67.png"},{"name":"挂机的阿凯","pic":"TB_BaconShop_HERO_16.png"},{"name":"馆长","pic":"TB_BaconShop_HERO_33.png"},{"name":"古夫·符文图腾","pic":"BG20_HERO_242.png"},{"name":"海盗帕奇斯","pic":"TB_BaconShop_HERO_18.png"},{"name":"迦拉克隆","pic":"TB_BaconShop_HERO_02.png"},{"name":"加拉克苏斯大王","pic":"TB_BaconShop_HERO_37.png"},{"name":"菌菇术士弗洛格尔","pic":"TB_BaconShop_HERO_55.png"},{"name":"凯尔萨斯·逐日者","pic":"TB_BaconShop_HERO_60.png"},{"name":"克苏恩","pic":"TB_BaconShop_HERO_29.png"},{"name":"恐龙大师布莱恩","pic":"TB_BaconShop_HERO_43.png"},{"name":"库尔特鲁斯·陨烬","pic":"BG20_HERO_280.png"},{"name":"拉卡尼休","pic":"TB_BaconShop_HERO_75.png"},{"name":"雷诺·杰克逊","pic":"TB_BaconShop_HERO_41.png"},{"name":"了不起的杰弗里斯","pic":"TB_BaconShop_HERO_91.png"},{"name":"林地守护者欧穆","pic":"TB_BaconShop_HERO_74.png"},{"name":"玛里苟斯","pic":"TB_BaconShop_HERO_58.png"},{"name":"贸易大王加里维克斯","pic":"TB_BaconShop_HERO_10.png"},{"name":"玛维·影歌","pic":"TB_BaconShop_HERO_62.png"},{"name":"米尔菲丝·法力风暴","pic":"TB_BaconShop_HERO_17.png"},{"name":"米尔豪斯·法力风暴","pic":"TB_BaconShop_HERO_49.png"},{"name":"穆克拉","pic":"TB_BaconShop_HERO_38.png"},{"name":"诺兹多姆","pic":"TB_BaconShop_HERO_57.png"},{"name":"帕奇维克","pic":"TB_BaconShop_HERO_34.png"},{"name":"齐恩瓦拉","pic":"TB_BaconShop_HERO_78.png"},{"name":"萨鲁法尔大王","pic":"BG20_HERO_102.png"},{"name":"鼠王","pic":"TB_BaconShop_HERO_12.png"},{"name":"死亡之翼","pic":"TB_BaconShop_HERO_52.png"},{"name":"苔丝·格雷迈恩","pic":"TB_BaconShop_HERO_50.png"},{"name":"天空上尉库拉格","pic":"TB_BaconShop_HERO_68.png"},{"name":"提克特斯","pic":"TB_BaconShop_HERO_94.png"},{"name":"吞噬者穆坦努斯","pic":"BG20_HERO_301.png"},{"name":"亡语者布莱克松","pic":"BG20_HERO_103.png"},{"name":"瓦托格尔女王","pic":"TB_BaconShop_HERO_14.png"},{"name":"伟大的阿卡扎曼扎拉克","pic":"TB_BaconShop_HERO_21.png"},{"name":"沃金","pic":"BG20_HERO_201.png"},{"name":"巫妖巴兹亚尔","pic":"TB_BaconShop_HERO_25.png"},{"name":"巫妖王","pic":"TB_BaconShop_HERO_22.png"},{"name":"舞者达瑞尔","pic":"TB_BaconShop_HERO_36.png"},{"name":"希拉斯·暗月","pic":"TB_BaconShop_HERO_90.png"},{"name":"辛达苟萨","pic":"TB_BaconShop_HERO_27.png"},{"name":"炎魔之王拉格纳罗斯","pic":"TB_BaconShop_HERO_11.png"},{"name":"亚煞极","pic":"TB_BaconShop_HERO_92.png"},{"name":"伊利丹·怒风","pic":"TB_BaconShop_HERO_08.png"},{"name":"伊莉斯·逐星","pic":"TB_BaconShop_HERO_42.png"},{"name":"伊瑟拉","pic":"TB_BaconShop_HERO_53.png"},{"name":"永恒者托奇","pic":"TB_BaconShop_HERO_28.png"},{"name":"尤朵拉船长","pic":"TB_BaconShop_HERO_64.png"},{"name":"尤格-萨隆","pic":"TB_BaconShop_HERO_35.png"},{"name":"泽瑞拉","pic":"BG20_HERO_101.png"},{"name":"詹迪斯·巴罗夫","pic":"TB_BaconShop_HERO_71.png"},{"name":"至尊盗王拉法姆","pic":"TB_BaconShop_HERO_45.png"},{"name":"狂风之翼","pic":"BG20_HERO_283.png"}]
+[
+  {
+    "name": "\u8f9b\u8fbe\u82df\u8428",
+    "pic": "89fb73b7a30b373d5a7df23e7b94bbc54f121caf23e2f1d170ef980caa9557c8.png"
+  },
+  {
+    "name": "\u9986\u957f",
+    "pic": "62e91b586dc3d390c9e76b018906d96e1e1e273bc7b7125fb79b3ad1707f3fe6.png"
+  },
+  {
+    "name": "\u6c38\u6052\u8005\u6258\u5947",
+    "pic": "6fc3086f2731c4f00449fbf9439d7f863b9d04a367184ac7d950078d6db9de34.png"
+  },
+  {
+    "name": "\u7a46\u514b\u62c9",
+    "pic": "295fea3c7c941bb18bf8774b9f25d83fe22e0cd97402c36a5495b58d1b13fe30.png"
+  },
+  {
+    "name": "\u75af\u72c2\u91d1\u5b57\u5854",
+    "pic": "7fc80f48e21d08515818c4bbf5b77ca69b6d3e41abbc0ad594a680b57afee261.png"
+  },
+  {
+    "name": "\u5e15\u5947\u7ef4\u514b",
+    "pic": "119a49fe501f4df7978b34a68dc166d32a85c7d71c5ba1bb5de243c7311aa369.png"
+  },
+  {
+    "name": "\u5c24\u683c-\u8428\u9686",
+    "pic": "58b6f792eb0659887f395ec42368712e13f6a8327573651dd24733d23553215f.png"
+  },
+  {
+    "name": "\u4f0a\u8389\u65af\u00b7\u9010\u661f",
+    "pic": "edbea07a8f705c3b59c2b48f7bd64c693b498a49e196e10fcc927dc83c984513.png"
+  },
+  {
+    "name": "\u821e\u8005\u8fbe\u745e\u5c14",
+    "pic": "7088abd9b94e9161058fdca764f4e4971ec32d10baff9bdbdb96ba6a2a2c4063.png"
+  },
+  {
+    "name": "\u52a0\u62c9\u514b\u82cf\u65af\u5927\u738b",
+    "pic": "c4e5be3be8e5b4a3a51977b5798bb47af5be6acd2a3413e40538856ef6b85b31.png"
+  },
+  {
+    "name": "\u6050\u9f99\u5927\u5e08\u5e03\u83b1\u6069",
+    "pic": "ffddfd7ed63c731a8626a32c7c0e7539e9be55595723643d0a3ed6d7d15857f4.png"
+  },
+  {
+    "name": "\u82ac\u5229\u00b7\u83ab\u683c\u987f\u7235\u58eb",
+    "pic": "39faeeabc28be4597dc0c2eef16a741e7d82c80cd4a2fbcec065c93804806b1e.png"
+  },
+  {
+    "name": "\u81f3\u5c0a\u76d7\u738b\u62c9\u6cd5\u59c6",
+    "pic": "e9b7702923434f51d6b375c391dd0ed62d8fb08ece1e0a9d2de26e1105cd503a.png"
+  },
+  {
+    "name": "\u9f20\u738b",
+    "pic": "6be62c3d869729ca7fd7e09e80693fa889a3354c6122ce98b2723bd153bf82d6.png"
+  },
+  {
+    "name": "\u6302\u673a\u7684\u963f\u51ef",
+    "pic": "5033f39c9b66d6e37b3dad6a4adb8455b620401d06356187dafa8bfdc69f146a.png"
+  },
+  {
+    "name": "\u74e6\u6258\u683c\u5c14\u5973\u738b",
+    "pic": "17ba6e4043ee158dab2effb6519894d3be8182a8ad8627297e7d57cc501c17db.png"
+  },
+  {
+    "name": "\u7c73\u5c14\u83f2\u4e1d\u00b7\u6cd5\u529b\u98ce\u66b4",
+    "pic": "21361d9061f772539a74c2c6f65e68a3fe5c3cb8ac20f0a73f21a4efe842dce2.png"
+  },
+  {
+    "name": "\u5815\u843d\u7684\u4e54\u6cbb",
+    "pic": "87f419e7236f4f60489aacc39f95ba96881f92209985f92a560d65ca81d738ed.png"
+  },
+  {
+    "name": "\u5deb\u5996\u738b",
+    "pic": "7224cbb1f388977c25d0f7369427ff9ae4fc373d955c1836a63ba4f2bbce80df.png"
+  },
+  {
+    "name": "\u6d77\u76d7\u5e15\u5947\u65af",
+    "pic": "3770b57762af646ab2acead2fd0842aeeeebc4f5a1bdc8db020f7e439fa44aa8.png"
+  },
+  {
+    "name": "\u8d38\u6613\u5927\u738b\u52a0\u91cc\u7ef4\u514b\u65af",
+    "pic": "94cc1ea6f008328fef4a1b078528f1b09596ebb45580c5fbee71a8d382eef9fb.png"
+  },
+  {
+    "name": "\u708e\u9b54\u4e4b\u738b\u62c9\u683c\u7eb3\u7f57\u65af",
+    "pic": "a5b9815f742adfe637af8247d6a49dc37a26142f995f21355144320aee7455a2.png"
+  },
+  {
+    "name": "\u4f1f\u5927\u7684\u963f\u5361\u624e\u66fc\u624e\u62c9\u514b",
+    "pic": "cc5bf85424ca5afd6ece850401087100c76d99db0201c09a9c11d475c24682b0.png"
+  },
+  {
+    "name": "\u5deb\u5996\u5df4\u5179\u4e9a\u5c14",
+    "pic": "c911e8ecad1b755cbbf83510b0078ca88e668deb297650ac6e52645b937f4a37.png"
+  },
+  {
+    "name": "\u827e\u5fb7\u6e29\u00b7\u8303\u514b\u91cc\u592b",
+    "pic": "597544bc6f71380864a0c9483d10cdb53eabb5825360822d852fba0b513dfe1c.png"
+  },
+  {
+    "name": "\u7c73\u5c14\u8c6a\u65af\u00b7\u6cd5\u529b\u98ce\u66b4",
+    "pic": "025b140e5bbdfcee7554cf8b7ee9c8264e800c3d3e5c89a5014f53c2d838e211.png"
+  },
+  {
+    "name": "\u8fe6\u62c9\u514b\u9686",
+    "pic": "125e76a222fd284471726a5ffc799532e804f99da9f2031c64d96adbf6784696.png"
+  },
+  {
+    "name": "\u96f7\u8bfa\u00b7\u6770\u514b\u900a",
+    "pic": "7669119ea1683637aa4956394fda805cb760e00464b6f4eea81eef2918d4f269.png"
+  },
+  {
+    "name": "\u6b7b\u4ea1\u4e4b\u7ffc",
+    "pic": "8780aab71f08207ceb140eab0499c6dc8ce4c9057bdff4fc9a679b95e6d6e28f.png"
+  },
+  {
+    "name": "\u4f0a\u745f\u62c9",
+    "pic": "390d567b6bfb6e7495c26390035ac65eb120d0378c1a9cdabe720db7fb2729aa.png"
+  },
+  {
+    "name": "\u963f\u83b1\u514b\u4e1d\u5854\u8428",
+    "pic": "a1a8919c6250e9d3884a6f4d4daef04a09b17e9ac9177711fa23fe45f741fd2a.png"
+  },
+  {
+    "name": "\u8bfa\u5179\u591a\u59c6",
+    "pic": "5d9f18a45f3e88c1e7bcd33f10fccb440e9535e5b1ab8567c52eddeee36ec984.png"
+  },
+  {
+    "name": "\u739b\u91cc\u82df\u65af",
+    "pic": "b40fe9ac99e015ef0be906f5399f3fe28aef162068a5e97d33ab7372f75598cc.png"
+  },
+  {
+    "name": "\u83cc\u83c7\u672f\u58eb\u5f17\u6d1b\u683c\u5c14",
+    "pic": "2821a58f82d1b5aa7345e1226de96c28d3d9e9d1950fd0dd07f6f56290a704ab.png"
+  },
+  {
+    "name": "\u4f0a\u5229\u4e39\u00b7\u6012\u98ce",
+    "pic": "e679da37d462332531028268a8b511fbdc47e80d70a1744492651bdd399d3e45.png"
+  },
+  {
+    "name": "\u51ef\u5c14\u8428\u65af\u00b7\u9010\u65e5\u8005",
+    "pic": "32313570740071f814046c1c7d5dbfb3346ba6753aed1270c527ce4995249c85.png"
+  },
+  {
+    "name": "\u5c24\u6735\u62c9\u8239\u957f",
+    "pic": "951e37309a94f0345c69a8ec04d161ae75a927e3d42c7b912dc3523e2e37eea7.png"
+  },
+  {
+    "name": "\u94a9\u7259\u8239\u957f",
+    "pic": "f1a73cebd40d6d4c4198f9a0fead9dcb1a7fd18aaaca08c695cf3737bd9386e4.png"
+  },
+  {
+    "name": "\u5929\u7a7a\u4e0a\u5c09\u5e93\u62c9\u683c",
+    "pic": "b1d3a5c49d57e7ba92f7d661905b9689e6e80d17ed6b1fa360cfe3268b572817.png"
+  },
+  {
+    "name": "\u963f\u5170\u5a1c\u00b7\u9010\u661f",
+    "pic": "44cbbf465102b5aa27c56dc998964af0236e47a8c2b08fbc2d2360b0efed2e49.png"
+  },
+  {
+    "name": "\u82d4\u4e1d\u00b7\u683c\u96f7\u8fc8\u6069",
+    "pic": "a777d58307ff494b3637e3929305b0dda1e0d6694e9266a3b6a875bf33d2bb74.png"
+  },
+  {
+    "name": "\u6bd4\u683c\u6c83\u65af\u5148\u751f",
+    "pic": "cb15293d16c8214acd9e22644f59904ce65d1c4baabbfca0d83996511afd29a7.png"
+  },
+  {
+    "name": "\u8a79\u8fea\u65af\u00b7\u5df4\u7f57\u592b",
+    "pic": "df19d13e1b448f72bf36791b468efda5a9f446abb5c864747d2f4c414629ee52.png"
+  },
+  {
+    "name": "\u5df4\u7f57\u592b\u9886\u4e3b",
+    "pic": "59fb553c67e6e7989d28cac97c493dea5ab5a8c9cff1cd0f06342db1247de296.png"
+  },
+  {
+    "name": "\u6797\u5730\u5b88\u62a4\u8005\u6b27\u7a46",
+    "pic": "303c7ebeb6f11ca20ef2f942167d3c6c3651801606b8021b0d202f6757fa9e99.png"
+  },
+  {
+    "name": "\u62c9\u5361\u5c3c\u4f11",
+    "pic": "0beee2000bf0b832f82dee8e14a54c9d5896717dd3cfd90000cf516756cb4be0.png"
+  },
+  {
+    "name": "\u5965\u62c9\u57fa\u5c14",
+    "pic": "f186941a8fc3a6408caad350863e6457397c9b4f1b5712662aaa61d6899ff237.png"
+  },
+  {
+    "name": "\u9f50\u6069\u74e6\u62c9",
+    "pic": "2ca96f84f822400077e6a6f313f7f4390cb077b4f04ffd23d60c96b96f226517.png"
+  },
+  {
+    "name": "\u4e86\u4e0d\u8d77\u7684\u6770\u5f17\u91cc\u65af",
+    "pic": "f66e080a4b8882e89fce293435bada34b2c17a6d63b6c74fa347ac17b44b952e.png"
+  },
+  {
+    "name": "\u5e0c\u62c9\u65af\u00b7\u6697\u6708",
+    "pic": "61268c2011702b0ccaa74a5dc581498b83827f9481d0881a3a53cb0749bca5be.png"
+  },
+  {
+    "name": "\u514b\u82cf\u6069",
+    "pic": "5f9f129b18fbf2611241a4ebce6ee2117f6372c119390b22ea437182bb5543ae.png"
+  },
+  {
+    "name": "\u4e9a\u715e\u6781",
+    "pic": "c9daca6a5ca4bd1038cc6445e9b0a09590c2cdfbde6607848d5c24c73da2d921.png"
+  },
+  {
+    "name": "\u6069\u4f50\u65af",
+    "pic": "6b885ec33ce4c5fff1d83a95083f3007d7c2bdc45b5c436449ee4293f238649e.png"
+  },
+  {
+    "name": "\u63d0\u514b\u7279\u65af",
+    "pic": "b0d84cd7009d46508314626db1f3d00d2e3cdb88bc4b1c64546a788f450359e0.png"
+  },
+  {
+    "name": "\u683c\u96f7\u5e03",
+    "pic": "60b4b5f4e2f699852d23146a965d11062fbd5b20b20e84dadbb34de58240930d.png"
+  },
+  {
+    "name": "\u8428\u9c81\u6cd5\u5c14\u5927\u738b",
+    "pic": "3733631827126dccb4820d01b52b6e8b604a7dfce4ca83a0c051828d2120fe91.png"
+  },
+  {
+    "name": "\u6cfd\u745e\u62c9",
+    "pic": "d0cc9ae43869662fedf498610fbea95f08eb4257f543191826b25c9a0c21bde7.png"
+  },
+  {
+    "name": "\u4ea1\u8bed\u8005\u5e03\u83b1\u514b\u677e",
+    "pic": "6088f47811341846597a6e1cf50863408ad518f91669accd23c82516cda5e550.png"
+  },
+  {
+    "name": "\u6c83\u91d1",
+    "pic": "405befe0c7f2b572befe273cd1b52134a3aee455562505b9f1f020209b2093fa.png"
+  },
+  {
+    "name": "\u53e4\u592b\u00b7\u7b26\u6587\u56fe\u817e",
+    "pic": "7916bf8542c56063994a84dc509385e77822fa2b46112987b2cad70f8a7c10f6.png"
+  },
+  {
+    "name": "\u541e\u566c\u8005\u7a46\u5766\u52aa\u65af",
+    "pic": "c353acb15113d6808f9629b604f7b001f7eaf2121d4272e0b84065bd5af897d7.png"
+  },
+  {
+    "name": "\u739b\u7ef4\u00b7\u5f71\u6b4c",
+    "pic": "bc564cfb449df70e3ace4f8cc60800cc27459ebc0602bd0c2341b3b18178a5a5.png"
+  },
+  {
+    "name": "\u5e93\u5c14\u7279\u9c81\u65af\u00b7\u9668\u70ec",
+    "pic": "4b2931c783fbf22972fc31980e78b58f21e27ee24527b4708174bf875de57670.png"
+  },
+  {
+    "name": "\u6c99\u5fb7\u6c83\u514b",
+    "pic": "3b1ddfd286bfb7303ee6a0e8d1f864af13c32360d93a1202dd2b3cdc083ce858.png"
+  },
+  {
+    "name": "\u72c2\u98ce\u4e4b\u7ffc",
+    "pic": "ed4a5e67828ef43ba71c8d606b51f7a97e10de1201d18ba4f0b29d9fa881750e.png"
+  },
+  {
+    "name": "\u962e\u5927\u5e08",
+    "pic": "96d246d1d06772df40f520bd4d212a617c7b08370dbbef3f85b56fd1437fff35.png"
+  },
+  {
+    "name": "\u51ef\u745e\u5c14\u00b7\u7f57\u59c6",
+    "pic": "29fe2b53d737e54776752a9fc6c82341c64713382565391d8204ba6da9147dfa.png"
+  },
+  {
+    "name": "\u65af\u5c3c\u5fb7",
+    "pic": "999a9a60e7805b125c0f2084a9407aeb897b3dba72b7ee3f7e4ef9af7777f049.png"
+  },
+  {
+    "name": "\u53a8\u5e08\u66f2\u5947",
+    "pic": "fbd5e2d20944f93b59163441ddf1017f61a823265876c96ba150ef57ff178779.png"
+  },
+  {
+    "name": "\u5854\u59c6\u8f9b\u00b7\u7f57\u59c6",
+    "pic": "9ea7b9427f9de424e516843e730b9b6ca33ff90d88402fd9bfac25447c30de66.png"
+  },
+  {
+    "name": "\u65af\u5361\u5e03\u65af\u00b7\u5200\u6cb9",
+    "pic": "c096fe6bbb8f554a6e172d23afb8bae36a2109529a7be2f23c32434bc7217e77.png"
+  },
+  {
+    "name": "\u5854\u7ef4\u4ec0\u00b7\u96f7\u77db",
+    "pic": "302b02c0eaece0443fd20684fb929703ce5ea65776e01ec92069fdc2094dae1d.png"
+  },
+  {
+    "name": "\u5e03\u9c81\u574e",
+    "pic": "cc2f85219026a1dd2b2e158047af5fdda4c54652741a4932661dd3f586e71b96.png"
+  },
+  {
+    "name": "\u5fb7\u96f7\u514b\u5854\u5c14",
+    "pic": "b2c4299a7671420c3231ee56177a2666ae63cf169558188f72cac899c3a29e45.png"
+  },
+  {
+    "name": "\u8303\u8fbe\u5c14\u00b7\u96f7\u77db",
+    "pic": "8e0ba9e9c1df23a863eb27ba852aa46b166152700148595c162e080d651607c3.png"
+  },
+  {
+    "name": "\u6d1b\u5361\u62c9",
+    "pic": "67a501f04842cd67329d0c12e6b5c9dc324b98a9bb801e387d43124146a3e8cb.png"
+  },
+  {
+    "name": "\u74e6\u5c14\u767b\u00b7\u6668\u62e5",
+    "pic": "3c5149bd6eeb4940cb764b98e9964dfa94c56e2d4d298163689d342e3c8c939b.png"
+  },
+  {
+    "name": "\u5965\u59ae\u514b\u5e0c\u4e9a",
+    "pic": "44ae4dd288994a94eea02005e89756fe175317b77125406c45f16ac6140f19ac.png"
+  },
+  {
+    "name": "\u8d39\u6797\u5927\u4f7f",
+    "pic": "a93c2d48c2c7438e0d79c7d207ae99dd7ce6d436fa097b2ccb83e5559cec9c5a.png"
+  },
+  {
+    "name": "\u4f0a\u59ae\u00b7\u79ef\u96f7",
+    "pic": "c0822126be1e2bc35d777e01d29785fef12046962a78f565c515246fbc11b55b.png"
+  },
+  {
+    "name": "\u827e\u8428\u62c9\u5973\u738b",
+    "pic": "2ca685b9895f3725af33d544ee1430c552912c866f6bf019bca1910bd9598646.png"
+  },
+  {
+    "name": "\u8fea\u4e9a\u6ce2\u7f57",
+    "pic": "e73a94c7250fb5b6dae6189747ea02bb7211614f1c033d0442ca3731a3761125.png"
+  },
+  {
+    "name": "\u5384\u7956\u739b\u7279",
+    "pic": "c6072ea82506f67c26dacd14f56b1a7df66a710d22509cfe9dd523dc399e391b.png"
+  }
+]

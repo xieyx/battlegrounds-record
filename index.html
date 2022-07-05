@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/control/iconselect.css?_=3" >
     <style>
         * {margin: 0; padding: 0;}
         body {font: 12px 'Microsoft YaHei'; color: #333333; background-color: rgb(250, 250, 250);}
+        label { padding: 5px 10px 5px 0; margin-right: 2px;}
         .btn {
             display: inline-block;
             padding: 3px 6px;
@@ -17,6 +19,7 @@
             box-shadow: 1px 1px 1px #CCCCCC;
             border-radius: 3px;
             background-color: #FFFFFF;
+            color: #333333;
         }
         .btn:hover {
             background-color: hotpink;
@@ -50,12 +53,12 @@
             border-left: 1px solid rgba(0,0,0,.06);
         }
         .input {
-            padding: 2px 4px;
+            padding: 10px;
             margin-right: 2px;
             border: 1px solid #CCCCCC;
             border-radius: 3px;
         }
-        .input input {
+        .input input[type="text"] {
             border: none;
             outline: none;
             height: 19px;
@@ -103,7 +106,7 @@
         }
 
         .table-row-cell > img {
-            width: 60px;
+            width: 30px;
         }
         .full-screen {
             position: fixed;
@@ -160,9 +163,68 @@
         #config > .modal {
             display: block;
         }
+        .darkmode--activated {
+            background-color: #3a393a;
+            color: #e1e0e1;
+        }
+        .darkmode--activated .table {
+            background-color: #1f1e1f;
+        }
+        .darkmode--activated .table-header {
+            background-color: #302f30;
+        }
+        .darkmode--activated .btn {
+            background-color: #4c4c4c;
+            border-color: #4c4c4c;
+            box-shadow: none;
+            color: #e1e0e1;
+        }
+        .darkmode--activated .btn:hover {
+            background-color: #5c5c5c;
+        }
+        .darkmode--activated .input {
+            background-color: #1f1e1f;
+        }
+        .darkmode--activated .modal {
+            background-color: #3a393a;
+            box-shadow: 3px 3px 5px #222222;
+            border-color: #222222;
+            color: #CCCCCC;
+        }
+        .darkmode--activated .selected-box {
+            background-color: #1f1e1f;
+            border-color: #3a393a;
+            text-align: center;
+        }
+        .darkmode--activated .selected-box:hover {
+            background-color: #1f1e1f;
+            border-color: #3a393a;
+        }
+        .darkmode--activated .input {
+            border-color: #333333;
+        }
+        .darkmode--activated .divider-vertical {
+            border-color: rgba(255, 255, 255, .3);
+        }
+        .darkmode--activated #heros-box-scroll {
+            background-color: #3a393a;
+            box-shadow: 3px 3px 5px #222222;
+            border-color: #222222;
+        }
+        .darkmode--activated #heros-box-scroll .icon {
+            background-color: #3a3a3a;
+            border-color: #222222;
+            text-align: center;
+        }
+        .darkmode--activated #heros-box-scroll .icon:hover {
+            background-color: #222222;
+        }
+        .darkmode--activated #heros-box-scroll .icon.selected {
+            background-color: #222222;
+        }
     </style>
 </head>
-<body>
+<body class="darkmode--activated">
     <div class="full-screen" id="loading">loading...</div>
     <div class="full-screen" id="config">
         <div class="modal">
@@ -199,7 +261,7 @@
             <div class="input input-inline">
                 <input id="path" type="text" name="url" readonly />
             </div>
-            <div class="btn" id="copy" data-clipboard-target="#path">复制</div>
+            <div class="btn" id="copy" data-clipboard-target="#path" style="line-height: 32px;">复制</div>
         </div>
         <div id="tool">
             <div class="btn" onclick="clearData()">清除</div>
@@ -211,8 +273,8 @@
         <div id="table" class="table">
             <div class="table-row table-header">
                 <div class="table-row-cell">英雄</div>
-                <div class="table-row-cell">名次</div>
                 <div class="table-row-cell">备注</div>
+                <div class="table-row-cell">名次</div>
             </div>
         </div>
         <div id="add" class="modal">
@@ -220,13 +282,46 @@
                 <div class="form-item">
                     <div class="form-item-label">英雄</div>
                     <div class="form-item-body">
-                        <select id="heros" name="hero"></select>
+                        <!-- <select id="heros" name="hero"></select> -->
+                        <div id="heros"></div>
+                        <input type="hidden" id="hero" name="hero">
                     </div>
                 </div>
                 <div class="form-item">
                     <div class="form-item-label">名次</div>
                     <div class="form-item-body input">
-                        <input type="number" min="1" max="8" name="rank" />
+                        <label>
+                            <input type="radio" value="1" name="rank" checked />
+                            1
+                        </label>
+                        <label>
+                            <input type="radio" value="2" name="rank" />
+                            2
+                        </label>
+                        <label>
+                            <input type="radio" value="3" name="rank" />
+                            3
+                        </label>
+                        <label>
+                            <input type="radio" value="4" name="rank" />
+                            4
+                        </label>
+                        <label>
+                            <input type="radio" value="5" name="rank" />
+                            5
+                        </label>
+                        <label>
+                            <input type="radio" value="6" name="rank" />
+                            6
+                        </label>
+                        <label>
+                            <input type="radio" value="7" name="rank" />
+                            7
+                        </label>
+                        <label>
+                            <input type="radio" value="8" name="rank" />
+                            8
+                        </label>
                     </div>
                 </div>
                 <div class="form-item">
@@ -242,19 +337,40 @@
             </form>
         </div>
     </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode({
+                bottom: '64px', // default: '32px'
+                right: '32px', // default: '32px'
+                left: 'unset', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: '#fff',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '', // default: ''
+                autoMatchOsTheme: true // default: true
+            })//.showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script> -->
     <!--<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>-->
     <script type="text/javascript" src="clipboard.min.js"></script>
-    <script type="text/javascript" src="obs-websocket.js"></script>
+    <!-- <script type="text/javascript" src="obs-websocket.js"></script> -->
+    <script type="text/javascript" src="lib/control/iconselect.js?_=1"></script>
+    <script type="text/javascript" src="lib/iscroll.js"></script>
     <script>
         var colors = [
             '',
-            '255, 0, 0',
-            '255, 165, 0',
-            '255, 255, 0',
-            '0, 255, 0',
-            '0, 127, 255',
-            '0, 0, 255',
-            '139, 0, 255',
+            '205, 80, 77',
+            '239, 177, 97',
+            '248, 240, 109',
+            '156, 198, 84',
+            '125, 199, 235',
+            '86, 96, 167',
+            '115, 88, 148',
             '200, 200, 200',
         ];
         var ranks = [
@@ -271,6 +387,8 @@
         var loading = true;
         var heros = [];
         var config = {};
+        var iconSelect;
+        var selectedText;
         window.onload = function() {
             var $preview = document.getElementById('preview');
             var $form = document.getElementById('form');
@@ -279,8 +397,9 @@
             var $loading = document.getElementById('loading');
             var $config = document.getElementById('config');
             var $heros = document.getElementById('heros');
+            var $hero = document.getElementById('hero');
             var $table = document.getElementById('table');
-            var url = 'heros.json';
+            var url = 'heros.json?v=1';
             var request = new XMLHttpRequest();
             request.open('GET', url);
             request.send(null);
@@ -288,10 +407,26 @@
                 loading = false;
                 $loading.style.display = 'none';
                 if (request.status == 200) {
-                    heros = JSON.parse(request.responseText);
-                    $heros.innerHTML = heros.map(function(hero) {
-                        return '<option value="'+hero.pic+'">'+hero.name+'</option>';
+                    iconSelect = new IconSelect("heros", {'selectedIconWidth':37.5,
+                'selectedIconHeight':51.8,
+                'selectedBoxPadding':5,
+                'iconsWidth':37.5,
+                'iconsHeight':51.8,
+                'boxIconSpace':3,
+                'vectoralIconNumber':20,
+                'horizontalIconNumber':3});
+                    $heros.addEventListener('changed', function(e){
+                        $hero.value = iconSelect.getSelectedValue();
                     });
+
+                    var icons = [];
+                    heros = JSON.parse(request.responseText);
+                    heros.map(function(hero) {
+                        icons.push({'iconFilePath':'heros/'+hero.pic, 'iconValue':hero.pic});
+                        // return '<option style="background-image:url(heros/'+hero.pic+');" value="'+hero.pic+'">'+hero.name+'</option>';
+                    });
+                    console.log(icons)
+                    iconSelect.refresh(icons);
                 }
             }
 
@@ -323,7 +458,7 @@
                 for (const [name,value] of values) {
                     config[name] = value;
                 }
-                initWs();
+                // initWs();
                 configHide();
             });
             $form.addEventListener("submit", function(e) {
@@ -349,6 +484,9 @@
                 $table.append(tableRow);
                 showMessage('添加成功');
                 modalHide();
+                setTimeout(function () {
+                    save(false, true);
+                }, 3000)
             });
 
             var data = localStorage.getItem('data');
@@ -366,15 +504,15 @@
             }
         }
 
-        function initWs() {
-            const obs = new OBSWebSocket();
-            obs.connect({ address: config.host+':'+config.port, password: config.password }).catch(err => { // Promise convention dicates you have a catch on every chain.
-                console.log(err);
-            });
-            obs.on('error', err => {
-                console.error('socket error:', err);
-            });
-        }
+        // function initWs() {
+        //     const obs = new OBSWebSocket();
+        //     obs.connect({ address: config.host+':'+config.port, password: config.password }).catch(err => { // Promise convention dicates you have a catch on every chain.
+        //         console.log(err);
+        //     });
+        //     obs.on('error', err => {
+        //         console.error('socket error:', err);
+        //     });
+        // }
 
         function modalShow() {
             var $modal = document.getElementById('add');
@@ -449,32 +587,31 @@
             canvas.width = 300;
             canvas.height = 700;
             ctx = canvas.getContext("2d");
-            //创建渐变对象
-            var gr = ctx.createLinearGradient(0, 0, 230, 0);
-            gr.addColorStop(1, 'rgb(255,255,255, 0)');
             for (var i=0; i<data.length; i++) {
                 ctx.font = "bold 24px 'Fira Code', monospace";
                 //创建渐变对象
-                var gr2 = ctx.createLinearGradient(0, i*70, 0, i*70+24);
-                //颜色断点
-                gr2.addColorStop(0, 'rgb(255, 255, 255, 0.3)');
-                gr2.addColorStop(1, 'rgb(255,255,255, 0)');
-                ctx.fillStyle = gr2;
-                ctx.fillText(ranks[data[i].rank], 170, i*70+26);
+                // var gr2 = ctx.createLinearGradient(0, i*70, 0, i*70+24);
+                // //颜色断点 文字
+                // gr2.addColorStop(0, 'rgba(51, 51, 51, 1)');
+                // gr2.addColorStop(1, 'rgba(51, 51, 51, 0)');
+                // ctx.fillStyle = gr2;
+                // ctx.fillText(ranks[data[i].rank], 170, i*70+24);
                 var gr3 = ctx.createLinearGradient(0, i*70, 0, i*70+24);
-                gr3.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.5)');
-                gr3.addColorStop(1, 'rgb(255,255,255, 0)');
+                gr3.addColorStop(0.7, 'rgba('+colors[data[i].rank]+', 1)');
+                gr3.addColorStop(1, 'rgba(51, 51, 51, 0)');
                 ctx.fillStyle = gr3;
-                ctx.fillText(ranks[data[i].rank], 170, i*70+26);
-                //颜色断点
-                gr.addColorStop(0, 'rgb('+colors[data[i].rank]+', 0.3)');
+                ctx.fillText(ranks[data[i].rank], 170, i*70+24);
+                //颜色断点 背景
+                var gr = ctx.createLinearGradient(0, 0, 230, 0);
+                gr.addColorStop(0.4, 'rgba('+colors[data[i].rank]+', 1)');
+                gr.addColorStop(1, 'rgba(51, 51, 51, 0)');
                 ctx.fillStyle = gr;
                 ctx.fillRect(0, i*70+20, 230, 45);
-                ctx.font = "bold 24px 微软雅黑";
+                ctx.font = "bold 20px 微软雅黑";
                 ctx.textAlign = "left";
-                ctx.fillStyle = "white";
+                ctx.fillStyle = "black";
                 ctx.fillText(data[i].remark, 75, i*70+50);
-                ctx.drawImage($table.children[i+1].children[0].children[0], 0, i*70, 70, 70);
+                ctx.drawImage($table.children[i+1].children[0].children[0], 2, i*70, 60, 83);
                 ctx.save();
             }
             var base64Data = canvas.toDataURL("image/png", 1.0);

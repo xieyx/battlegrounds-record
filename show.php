@@ -1,7 +1,11 @@
 <?php $filename=$_GET['p']??'empty';?>
-<style>*{margin:0;padding:0;}</style>
-    <img id="pic" src="p/<?php echo $filename; ?>.png" onclick="refresh()" />
-<div id="closeBtn" onclick="hide()" style="position: absolute; top: 0; display: none;cursor: pointer; width: 20px; height: 20px; text-align: center; line-height: 20px; background-color: #FFFFFF; color: #333;">x</div>
+<style>
+*{margin:0;padding:0;}
+//body{background-color:rgb(31,30,31);}
+</style>
+<body>
+<img id="pic" src="p/<?php echo $filename; ?>.png" onclick="refresh()" />
+</body>
 <script>
 var $pic = document.getElementById('pic');
 
